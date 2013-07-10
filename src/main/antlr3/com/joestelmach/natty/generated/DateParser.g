@@ -323,17 +323,26 @@ relaxed_year_prefix
 // ********** formal date rules **********
 
 formal_date
-  // year first: 1979-02-28, 1980/01/02, etc.  full 4 digit year required to match
-  : relaxed_day_of_week? formal_year_four_digits formal_date_separator formal_month_of_year formal_date_separator formal_day_of_month
+  // in formal dates, ' de ' is a formal date separator
+  // year first: 1979-02-28, 1980/01/02, etc.  full 4 digit year required to match - Portuguese Adapted (YY - DD - MM or YYYY - DD - MM)
+  : relaxed_day_of_week? formal_year_four_digits formal_date_separator formal_day_of_month formal_date_separator formal_month_of_year
       -> ^(EXPLICIT_DATE formal_month_of_year formal_day_of_month relaxed_day_of_week? formal_year_four_digits)
       
   // year last: 1/02/1980, 2/28/79.  2 or 4 digit year is acceptable 
-  | relaxed_day_of_week? formal_month_of_year formal_date_separator formal_day_of_month (formal_date_separator formal_year)?
+
+  | relaxed_day_of_week? formal_day_of_month WHITE_SPACE? formal_date_separator WHITE_SPACE? formal_month_of_year WHITE_SPACE? (formal_date_separator formal_year)?
       -> ^(EXPLICIT_DATE formal_month_of_year formal_day_of_month relaxed_day_of_week? formal_year?)
+    
+  | relaxed_day_of_week? formal_day_of_month WHITE_SPACE? formal_date_separator WHITE_SPACE? relaxed_month WHITE_SPACE? (formal_date_separator formal_year)?
+      -> ^(EXPLICIT_DATE relaxed_month  formal_day_of_month relaxed_day_of_week? formal_year?)  
       
   | relaxed_month WHITE_SPACE relaxed_year
-      -> ^(EXPLICIT_DATE relaxed_month ^(DAY_OF_MONTH INT["1"]) relaxed_year?)
+      -> ^(EXPLICIT_DATE relaxed_month ^(DAY_OF_MONTH INT["1"]) relaxed_year?)  
+      
   ;
+  
+  
+  
   
 formal_month_of_year
   : int_01_to_12_optional_prefix -> ^(MONTH_OF_YEAR int_01_to_12_optional_prefix)
@@ -355,6 +364,7 @@ formal_year_four_digits
 formal_date_separator
   : DASH
   | SLASH
+  | DE
   ;
   
 // ********** relative date rules **********

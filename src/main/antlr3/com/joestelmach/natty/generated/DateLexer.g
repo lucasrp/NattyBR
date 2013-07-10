@@ -14,18 +14,18 @@ lexer grammar DateLexer;
 
 // ********** date rules ********** 
 
-JANUARY   : 'january'   's'?  | 'jan' DOT?;
-FEBRUARY  : 'february'  's'?  | 'feb' DOT?;
-MARCH     : 'march'     'es'? | 'mar' DOT?;
-APRIL     : 'april'     's'?  | 'apr' DOT?;
-MAY       : 'may'       's'?;
-JUNE      : 'june'      's'?  | 'jun' DOT?;
-JULY      : 'july'      's'?  | 'jul' DOT?;
-AUGUST    : 'august'    's'?  | 'aug' DOT?;
-SEPTEMBER : 'september' 's'?  | 'sep' DOT? | 'sept' DOT?;
-OCTOBER   : 'october'   's'?  | 'oct' DOT?;
-NOVEMBER  : 'november'  's'?  | 'nov' DOT?;
-DECEMBER  : 'december'  's'?  | 'dec' DOT?;
+JANUARY   : 'janeiro'          | 'jan' DOT? | 'january'   's'?   ;
+FEBRUARY  : 'fevereiro'        | 'fev' DOT? | 'february'  's'?  | 'feb' DOT?;
+MARCH     : 'marco'  | 'março' | 'mar' DOT? | 'march'     's'?   ;
+APRIL     : 'abril'            | 'abr' DOT? | 'april'     's'?  | 'apr' DOT?;
+MAY       : 'maio'             | 'mai' DOT? | 'may'       's'?   ;
+JUNE      : 'junho'            | 'jun' DOT? | 'june'     's'?    ;
+JULY      : 'julho'            | 'jul' DOT? | 'july'      's'?   ;
+AUGUST    : 'agosto'           | 'ago' DOT? | 'august'    's'?  | 'aug' DOT?;
+SEPTEMBER : 'setembro'         | 'sep' DOT? | 'september' 's'?  | 'sept' DOT?;
+OCTOBER   : 'outubro'          | 'out' DOT? | 'october'   's'?  | 'oct' DOT?;
+NOVEMBER  : 'novembro'         | 'nov' DOT? | 'november'  's'?   ;
+DECEMBER  : 'dezembro'         | 'dec' DOT? | 'december'  's'?   ;
   
 SUNDAY    : 'sunday'    's'?  | 'sun' DOT?  | 'suns' DOT?;
 MONDAY    : 'monday'    's'?  | 'mon' DOT?  | 'mons' DOT?;
@@ -249,6 +249,7 @@ SLASH : '/';
 DOT   : '.';
 PLUS  : '+';
 SINGLE_QUOTE : '\'';
+DE    : 'de';
 
 FOR       : 'for';
 IN        : 'in';
@@ -268,7 +269,7 @@ COMING    : 'coming';
 UPCOMING  : 'upcoming';
 FROM      : 'from';
 NOW       : 'now';
-AGO       : 'ago';
+AGO       : 'ago///'; 
 BEFORE    : 'before';
 BEGINNING : 'beginning' | 'begining';
 START     : 'start';

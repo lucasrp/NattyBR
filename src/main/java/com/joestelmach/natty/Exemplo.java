@@ -12,7 +12,7 @@ public class Exemplo {
 
 	public static void main(String[] args) {
 		Parser parser = new Parser();
-		List<DateGroup> groups = parser.parse("hoje é dia 14 de janeiro de 2015, e 12 de junho de 2014");
+		List<DateGroup> groups = parser.parse("14 de janeiro de 1989, e 12 de junho de 2014");
 		for(DateGroup group:groups) {
 		    List<Date> dates = group.getDates();
 		    int line = group.getLine();

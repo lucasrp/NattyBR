@@ -249,7 +249,7 @@ SLASH : '/';
 DOT   : '.';
 PLUS  : '+';
 SINGLE_QUOTE : '\'';
-DE    : 'de';
+DE    : WHITE_SPACE? 'de' WHITE_SPACE?;
 
 FOR       : 'for';
 IN        : 'in';

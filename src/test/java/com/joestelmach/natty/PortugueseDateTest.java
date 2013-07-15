@@ -43,29 +43,19 @@ public class PortugueseDateTest extends AbstractTest {
 //    validateDate("jan '80", 1, 1, 1980);
 	  
 	  validateDate("23/1/2012", 1, 23, 2012);
-	  validateDate("23-03-2012", 3, 23, 2012);
+	  validateDate("23-03-2010", 3, 23, 2010);
 	  validateDate("12/05/12", 5, 12, 2012);
 	  validateDate("12/6", 6, 12, Calendar.getInstance().get(Calendar.YEAR));
 	  validateDate("no dia 12/01/10, eu fui à praia", 1, 12, 2010);
 	  validateDate("15/02/2010", 2, 15, 2010);
-	  validateDate("oct 1, 1980", 10, 1, 1980);
 	  validateDate("1 de janeiro de 1980", 1, 1, 1980);
+	  validateDate("Noticia salva em 1 de março de 14", 3,1,2014);
     
   }
   
   @Test
   public void testRelaxed() {
-    validateDate("oct 1, 1980", 10, 1, 1980);
-    validateDate("oct. 1, 1980", 10, 1, 1980);
-    validateDate("oct 1,1980", 10, 1, 1980);
-    validateDate("1st oct in the year '89", 10, 1, 1989);
-    validateDate("thirty first of december '80", 12, 31, 1980);
-    validateDate("the first of december in the year 1980", 12, 1, 1980);
-    validateDate("the 2 of february in the year 1980", 2, 2, 1980);
-    validateDate("the 2nd of february in the year 1980", 2, 2, 1980);
-    validateDate("the second of february in the year 1980", 2, 2, 1980);
-    validateDate("jan. 2nd", 1, 2, Calendar.getInstance().get(Calendar.YEAR));
-    validateDate("sun, nov 21 2010", 11, 21, 2010);
+    
   }
   
   public static void main(String[] args) {

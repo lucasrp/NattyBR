@@ -330,10 +330,10 @@ formal_date
       
   // year last: 1/02/1980, 2/28/79.  2 or 4 digit year is acceptable 
 
-  | relaxed_day_of_week? formal_day_of_month WHITE_SPACE? formal_date_separator WHITE_SPACE? formal_month_of_year WHITE_SPACE? (formal_date_separator formal_year)?
+  | relaxed_day_of_week? formal_day_of_month formal_date_separator formal_month_of_year (formal_date_separator formal_year)?
       -> ^(EXPLICIT_DATE formal_month_of_year formal_day_of_month relaxed_day_of_week? formal_year?)
     
-  | relaxed_day_of_week? formal_day_of_month WHITE_SPACE? formal_date_separator WHITE_SPACE? relaxed_month WHITE_SPACE? (formal_date_separator formal_year)?
+  | relaxed_day_of_week? formal_day_of_month formal_date_separator relaxed_month (formal_date_separator formal_year)?
       -> ^(EXPLICIT_DATE relaxed_month  formal_day_of_month relaxed_day_of_week? formal_year?)  
       
   | relaxed_month WHITE_SPACE relaxed_year
@@ -366,6 +366,7 @@ formal_date_separator
   | SLASH
   | DE
   ;
+
   
 // ********** relative date rules **********
   

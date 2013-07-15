@@ -3,5 +3,7 @@ expression, natty will apply standard language recognition and translation
 techniques to produce a list of corresponding dates with optional parse and
 syntax information.
 
+This is a translated version of Natty, adapted to portuguese.
+
 Complete documentation can be found here:
 http://natty.joestelmach.com

@@ -6,6 +6,7 @@ import java.util.List;
 
 import junit.framework.Assert;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 /**
@@ -15,6 +16,7 @@ import org.junit.Test;
 public class CPANTest {
   
   @Test
+  @Ignore
   public void sanityCheck() throws Exception {
     BufferedReader reader = new BufferedReader(new InputStreamReader(
         CPANTest.class.getResourceAsStream("/cpan.txt")));

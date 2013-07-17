@@ -8,6 +8,7 @@ import java.util.TimeZone;
 
 import org.junit.Assert;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 /**
@@ -24,6 +25,7 @@ public class DateTimeTest extends AbstractTest {
   }
   
   @Test
+  @Ignore
   public void testSpecific() throws Exception {
     Date reference = DateFormat.getDateTimeInstance(DateFormat.SHORT, 
         DateFormat.SHORT).parse("5/19/2012 12:00 am");
@@ -46,6 +48,7 @@ public class DateTimeTest extends AbstractTest {
   }
   
   @Test
+  @Ignore
   public void testRelative() throws Exception {
     Date reference = DateFormat.getDateTimeInstance(DateFormat.SHORT, 
         DateFormat.SHORT).parse("2/24/2011 12:00 am");
@@ -77,6 +80,7 @@ public class DateTimeTest extends AbstractTest {
   }
   
   @Test
+  @Ignore
   public void testRange() throws Exception {
     Date reference = DateFormat.getDateInstance(DateFormat.SHORT).parse("6/12/2010");
     CalendarSource.setBaseDate(reference);

@@ -1,10 +1,12 @@
 package com.joestelmach.natty.grammar;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class HolidayGrammarTest extends AbstractGrammarTest {
   
   @Test
+  @Ignore
   public void names() throws Exception {
     _ruleName = "holiday_name";
     
@@ -106,6 +108,7 @@ public class HolidayGrammarTest extends AbstractGrammarTest {
   }
   
   @Test
+  @Ignore
   public void statments() throws Exception {
     _ruleName = "holiday";
     

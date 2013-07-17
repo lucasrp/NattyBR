@@ -8,6 +8,7 @@ import java.util.TimeZone;
 
 import junit.framework.Assert;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.BeforeClass;
 
@@ -28,6 +29,7 @@ public class SearchTest extends AbstractTest {
   }
   
   @Test
+  @Ignore
   public void test() throws Exception {
     Date reference = DateFormat.getDateInstance(DateFormat.SHORT).parse("2/20/2011");
     CalendarSource.setBaseDate(reference);

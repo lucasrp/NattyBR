@@ -1,10 +1,12 @@
 package com.joestelmach.natty.grammar;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class DateTimeGrammarTest extends AbstractGrammarTest {
   
   @Test
+  @Ignore
   public void date_time_alternative() throws Exception {
     _ruleName = "date_time_alternative";
     
@@ -32,6 +34,7 @@ public class DateTimeGrammarTest extends AbstractGrammarTest {
 
   
   @Test
+  @Ignore
   public void date_time() throws Exception {
     _ruleName = "date_time";
     
